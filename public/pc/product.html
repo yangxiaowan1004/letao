@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>用户管理</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="lib/nprogress/nprogress.css"/>
     <link rel="stylesheet" href="css/common.css"/>
@@ -21,17 +21,17 @@
     <div class="nav">
         <ul class="">
             <li>
-                <a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a>
+                <a href="user.html" ><span class="glyphicon glyphicon-user"></span> 用户管理</a>
             </li>
             <li>
                 <a href="#"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
                 <div class="second" style="display: none">
-                    <a href="first.html">一级分类</a>
-                    <a href="second.html">二级分类</a>
+                    <a href="first.html" >一级分类</a>
+                    <a href="second.html" >二级分类</a>
                 </div>
             </li>
             <li>
-                <a href="product.html"><span class="glyphicon glyphicon-tags"></span> 用户管理</a>
+                <a href="product.html" class="now"><span class="glyphicon glyphicon-tags"></span> 商品管理</a>
             </li>
         </ul>
     </div>
@@ -45,31 +45,12 @@
     <div class="container-fluid">
         <ol class="breadcrumb">
             <li><a href="#">管理系统</a></li>
-            <li class="active">首页</li>
+            <li class="active">商品管理</li>
         </ol>
     </div>
     <!--内容区域-->
     <div class="content">
-        <div class="bar pull-left"></div>
-        <div class="pie pull-right"></div>
-    </div>
-</div>
-<!--模态框-->
-<div class="modal fade" id="logoutModal" tabindex="-1">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                <h4 class="modal-title">温馨提示</h4>
-            </div>
-            <div class="modal-body">
-                <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 您确定要退出后台管理系统吗？</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary btn_logout">退出</button>
-            </div>
-        </div>
+
     </div>
 </div>
 
