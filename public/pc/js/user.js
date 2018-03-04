@@ -67,11 +67,11 @@ $(function(){
 
         })
     })
-    $(".confirm").on("clcik",function(){
-
-        //$("#userModal").modal("hide");
-        console.log(101);
-
-    })
+    //$(".confirm").on("click",function(){
+    //
+    //    //$("#userModal").modal("hide");
+    //    console.log(101);
+    //
+    //})
 
 })
