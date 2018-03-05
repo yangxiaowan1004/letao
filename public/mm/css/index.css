@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.nav {
+    padding:10px;
+}
+.nav li {
+    float: left;
+    width: 33.33%;
+}
+/*产品模块*/
+.product {
+    padding:10px;
+}
+.product li {
+    float: left;
+    width: 48%;
+    border: 1px solid #ccc;
+    padding:10px;
+    margin-bottom: 10px;
+}
+.product li:nth-child(odd){
+    margin-right: 4%;
+}
+.product li a {
+    text-align: center;
+}
+.product li .new,
+.product li .old {
+    font-size: 14px;
+    color:#9d9d9d;
+}
+.product li .new {
+    color:red;
+}
+.product li .old {
+    text-decoration: line-through;
+}
+.product li button {
+    display: block;
+    margin: 10px auto 0;
+}
+

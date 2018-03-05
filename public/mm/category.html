@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>小乐淘分类页</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css"/>
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/category.css"/>
+</head>
+<body>
+<div class="container">
+    <!--头部-->
+    <div class="header">
+        <a href="index.html" class="left"><span class="fa fa-home"></span></a>
+        <h3>乐 淘 云 购</h3>
+        <a href="#" class="right"><span class="fa fa-search"></span></a>
+    </div>
+    <!--主体部分-->
+    <div class="main">
+        <div class="nav">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="first">
+                        <li><a href="#" class="now">运动馆</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="second">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <ul class="mui-clearfix">
+            <li ><a href="index.html" ><span class="fa fa-home"></span><p>首页</p></a></li>
+            <li><a href="category.html" class="now" ><span class="fa fa-bars"></span><p>分类</p></a></li>
+            <li><a href="#"><span class="fa fa-shopping-cart"></span><p>购物车</p></a></li>
+            <li><a href="#"><span class="fa fa-user"></span><p>会员中心</p></a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/template" id="tem-nav">
+{{each rows v i}}
+    <li id={{v.id}}><a href="#" class="{{i==0?'now':''}}">{{v.categoryName}}</a></li>
+{{/each}}
+</script>
+
+<script type="text/template" id="tem-con">
+{{if rows.length===0}}
+<p class="tip">该分类下没有更多的数据 ！</p>
+{{/if}}
+
+{{each rows v}}
+    <li>
+        <a href="#"><img src="{{v.brandLogo?v.brandLogo:'images/user.png'}}" /><p>{{v.brandName}}</p></a>
+    </li>
+{{/each}}
+</script>
+
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/mui/js/mui.min.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>
