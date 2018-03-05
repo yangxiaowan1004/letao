@@ -1,0 +1,77 @@
+@charset "UTF-8";
+html,
+body {
+    height: 100%;
+}
+* {
+    margin:0;
+    padding:0;
+}
+ul,ol{
+    list-style: none;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: pink;
+}
+.header {
+    width: 100%;
+    height: 45px;
+    background-color: #069;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.header h3 {
+    text-align: center;
+    color:#fff;
+    line-height: 45px;
+    margin: 0 auto;
+    font-weight: 500;
+
+}
+.header a {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    color:#fff;
+    text-align: center;
+    line-height: 45px;
+    left:0;
+    top:0;
+}
+.header .right {
+    left:auto;
+    right:0;
+}
+/*底部*/
+.footer {
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    bottom:0;
+    background-color: #069;
+}
+.footer li {
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding-top:8px;
+}
+.footer li a {
+    color:#fff;
+}
+.footer li a p{
+    color:#fff;
+}
+.footer li a.now {
+    color:darkgoldenrod;
+}
+.footer li a.now p {
+    color:darkgoldenrod;
+}
