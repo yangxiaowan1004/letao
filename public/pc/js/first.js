@@ -21,7 +21,6 @@ $(function(){
                 $("#pagination").bootstrapPaginator({
                     bootstrapMajorVersion:3,
                     currentPage:page,
-                    numberOfPages:6,
                     totalPages:Math.ceil(info.total/info.size),
                     onPageClicked:function(a,b,c,p){
                         page=p;
@@ -44,7 +43,7 @@ $(function(){
         // 校验规则
         fields:{
             categoryName:{
-                validator:{
+                validators:{
                     notEmpty:{
                         message:"请输入一级分类名称"
                     }
@@ -59,6 +58,7 @@ $(function(){
     });
     $(".form").on("success.form.bv",function(e){
         e.preventDefault();
+
         $.ajax({
             type:'POST',
             url:'/category/addTopCategory',
@@ -66,8 +66,8 @@ $(function(){
             success:function(info){
                 console.log(info);
                 if(info.success){
-                    $(".form").modal("hide");
-                    $(".form").data("bootstrapValidator").resetForm("true");
+                    $("#firstModal").modal("hide");
+                    $(".form").data("bootstrapValidator").resetForm(true);
                     page=1;
                     render();
                 }

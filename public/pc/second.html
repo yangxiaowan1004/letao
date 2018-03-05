@@ -26,9 +26,9 @@
             </li>
             <li>
                 <a href="#"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
-                <div class="second" style="display: block ">
+                <div class="second" style="display: block">
                     <a href="first.html" >一级分类</a>
-                    <a href="second.html" class="now">二级分类</a>
+                    <a href="second.html" class="now" >二级分类</a>
                 </div>
             </li>
             <li>
@@ -55,8 +55,10 @@
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th width="20%">序号</th>
-                    <th width="80%">分类名称</th>
+                    <th width="10%">序号</th>
+                    <th width="30%">一级分类名称</th>
+                    <th width="30%">二级分类名称</th>
+                    <th width="30%">一级分类LOGO</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -90,7 +92,7 @@
     </div>
 </div>
 <!--添加分类模态框-->
-<div class="modal fade" id="firstModal" tabindex="-1">
+<div class="modal fade" id="secondModal" tabindex="-1">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -99,13 +101,38 @@
             </div>
             <form class="form">
                 <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类名称">
+                    <div class="form-group mb_20">
+                        <div class="dropdown">
+                            <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+                                <span class="dropdown_text">请选择一级分类</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul>
+
+                            </ul>
+                            <input type="hidden" name="categoryId"/>
+                        </div>
+                    </div>
+                    <div class="from-grop mb_20">
+                        <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName"/>
+                    </div>
+                    <div class="form-grop mb_20">
+                        <div class="file_box">
+                            <label for="fileupload" class="btn btn-default">上传图片</label>
+                            <input type="file" style="display: none" id="fileupload" class="btn btn-default"
+                                   name="pic1" data-url="/category/addSecondCategoryPic"/>
+                        </div>
+                    </div>
+                    <div class="form-grop img_box">
+                        <img src="images/none.png" width=100 height=100 alt=""/>
+                        <input type="hidden" name="brandLogo"/>
+                        <input type="hidden" name="hot" value="1"/>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary add">添加</button>
+                    <button type="submit" class="btn btn-primary add">添加</button>
                 </div>
             </form>
         </div>
@@ -115,9 +142,11 @@
 <!--表格模板引擎-->
 <script type="text/template" id="tem">
     {{each rows v i}}
-    <tr data-id="{{v.id}}">
+    <tr>
         <td>{{(page-1)*size+i+1}}</td>
         <td>{{v.categoryName}}</td>
+        <td>{{v.brandName}}</td>
+        <td><img src="{{v.brandLogo}}" alt="" width=60/></td>
     </tr>
     {{/each}}
 </script>
@@ -129,6 +158,6 @@
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/first.js"></script>
+<script src="js/second.js"></script>
 </body>
 </html>
