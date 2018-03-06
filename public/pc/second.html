@@ -101,32 +101,33 @@
             </div>
             <form class="form">
                 <div class="modal-body">
-                    <div class="form-group mb_20">
+                    <div class="form-group">
                         <div class="dropdown">
-                            <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">
-                                <span class="dropdown_text">请选择一级分类</span>
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
+                                <span class="drop-text">请选择一级分类</span>
                                 <span class="caret"></span>
                             </button>
-                            <ul>
+                            <input type="hidden" name="categoryId"/>
+                            <ul class="dropdown-menu" >
 
                             </ul>
-                            <input type="hidden" name="categoryId"/>
                         </div>
                     </div>
-                    <div class="from-grop mb_20">
+                    <div class="form-group ">
                         <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName"/>
                     </div>
-                    <div class="form-grop mb_20">
+                    <div class="form-group">
                         <div class="file_box">
-                            <label for="fileupload" class="btn btn-default">上传图片</label>
-                            <input type="file" style="display: none" id="fileupload" class="btn btn-default"
-                                   name="pic1" data-url="/category/addSecondCategoryPic"/>
+                            <label for="file" class="btn btn-default">上传图片</label>
+                            <!-- 用label for 将两个盒子关联起来，让真实的上传图片的盒子隐藏-->
+                            <!-- 图片上传插件需要input有name属性，data-url属性-->
+                            <input type="file" id="file" style="display: none" name="pic1" data-url="/category/addSecondCategoryPic"/>
+                            <input type="hidden" name="brandLogo" />
+                            <input type="hidden" name="hot" value="1"/>
                         </div>
                     </div>
-                    <div class="form-grop img_box">
+                    <div class="form-group img_box">
                         <img src="images/none.png" width=100 height=100 alt=""/>
-                        <input type="hidden" name="brandLogo"/>
-                        <input type="hidden" name="hot" value="1"/>
                     </div>
                 </div>
 
@@ -151,8 +152,18 @@
     {{/each}}
 </script>
 
+<!--模态框下拉菜单数据渲染-->
+<script type="text/template" id="tem-drop">
+{{each rows v}}
+    <li data-id="{{v.id}}"><a href="#">{{v.categoryName}}</a></li>
+{{/each}}
+</script>
+
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
